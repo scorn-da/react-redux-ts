@@ -1,30 +1,4 @@
-enum UserActionTypes {
-  FETCH_USERS = 'react-redux-ts/userReducer/FETCH_USERS',
-  FETCH_USERS_SUCCESS = 'react-redux-ts/userReducer/FETCH_USERS_SUCCESS',
-  FETCH_USERS_ERROR = 'react-redux-ts/userReducer/FETCH_USERS_ERROR',
-}
-
-interface UserState {
-  users: any[];
-  isLoading: boolean;
-  error: null | string;
-}
-
-interface FetchUsersAction {
-  type: UserActionTypes.FETCH_USERS;
-}
-
-interface FetchUsersSuccessAction {
-  type: UserActionTypes.FETCH_USERS_SUCCESS;
-  payload: any[];
-}
-
-interface FetchUsersErrorAction {
-  type: UserActionTypes.FETCH_USERS_ERROR;
-  payload: string;
-}
-
-type UserAction = FetchUsersAction | FetchUsersSuccessAction | FetchUsersErrorAction;
+import { UserAction, UserActionTypes, UserState } from '../../types/user';
 
 const initialState: UserState = {
   users: [],
