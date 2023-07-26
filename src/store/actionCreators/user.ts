@@ -1,9 +1,9 @@
-import { UserActionTypes } from '../../types/user';
+import { UserAction, UserActionTypes } from '../../types/user';
 import { Dispatch } from 'redux';
 import axios from 'axios';
 
 export const fetchUsers = (): any => {
-  return async (dispatch: Dispatch) => {
+  return async (dispatch: Dispatch<UserAction>) => {
     try {
       dispatch({ type: UserActionTypes.FETCH_USERS  });
       const res = await axios.get('https://jsonplaceholder.typicode.com/users');
