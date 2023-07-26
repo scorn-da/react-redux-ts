@@ -1,4 +1,4 @@
-interface TodoState {
+interface TodosState {
   todos: [];
   isLoading: boolean;
   error: null | string;
@@ -6,34 +6,34 @@ interface TodoState {
   limit: number;
 }
 
-export enum TodoActionTypes {
+export enum TodosActionTypes {
   FETCH_TODOS = 'react-redux-ts/todosReducer/FETCH_TODOS',
   FETCH_TODOS_SUCCESS = 'react-redux-ts/todosReducer/FETCH_TODOS_SUCCESS',
   FETCH_TODOS_ERROR = 'react-redux-ts/todosReducer/FETCH_TODOS_ERROR',
   SET_TODO_PAGE = 'react-redux-ts/todosReducer/SET_TODO_PAGE',
 }
 
-interface FetchTodoAction {
-  type: TodoActionTypes.FETCH_TODOS;
+interface FetchTodosAction {
+  type: TodosActionTypes.FETCH_TODOS;
 }
 
-interface FetchTodoSuccessAction {
-  type: TodoActionTypes.FETCH_TODOS_SUCCESS;
+interface FetchTodosSuccessAction {
+  type: TodosActionTypes.FETCH_TODOS_SUCCESS;
   payload: any[];
 }
 
-interface FetchTodoErrorAction {
-  type: TodoActionTypes.FETCH_TODOS_ERROR;
+interface FetchTodosErrorAction {
+  type: TodosActionTypes.FETCH_TODOS_ERROR;
   payload: string;
 }
 
-interface SetTodoPage {
-  type: TodoActionTypes.SET_TODO_PAGE;
+interface SetTodosPage {
+  type: TodosActionTypes.SET_TODO_PAGE;
   payload: number;
 }
 
 export type TodosAction =
-  FetchTodoAction |
-  FetchTodoSuccessAction |
-  FetchTodoErrorAction |
-  SetTodoPage;
+  FetchTodosAction |
+  FetchTodosSuccessAction |
+  FetchTodosErrorAction |
+  SetTodosPage;
