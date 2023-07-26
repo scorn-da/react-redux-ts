@@ -1,15 +1,14 @@
 import React, { useEffect } from 'react';
 import { useTypedSelector } from '../hooks/useTypedSelector';
-import { useDispatch } from 'react-redux';
-import { fetchUsers } from '../store/actionCreators/user';
+import { useActions } from '../hooks/useActions';
 
 const UserList: React.FC = () => {
   const { users, error, isLoading } = useTypedSelector(state => state.user);
-  const dispatch = useDispatch();
+  const { fetchUsers } = useActions();
 
   useEffect(() => {
     const controller = new AbortController();
-      dispatch(fetchUsers());
+      fetchUsers();
     return () => controller.abort();
   }, [])
 
