@@ -1,4 +1,4 @@
-interface TodosState {
+export interface TodosState {
   todos: [];
   isLoading: boolean;
   error: null | string;
